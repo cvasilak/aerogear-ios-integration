@@ -48,7 +48,7 @@ NSString* __createId;
         [config setBaseURL:projectsURL];
         [config setAuthModule:_authModule];
         [config setType:@"REST"];
-        [config setRecordId:@"id"];        
+        [config setRecordId:@"id"];
     }];
     
     // get access to the tasks pipe
@@ -108,16 +108,55 @@ NSString* __createId;
     // login....
     [_authModule login:@"john" password:@"123" success:^(id object) {
         
-    // read all tasks
-    [_tasks read:^(id responseObject) {
-        NSLog(@"%@", responseObject);
-        STAssertTrue(0 < [responseObject count], @"should NOT be empty...");
+        // read all tasks
+        [_tasks read:^(id responseObject) {
+            NSLog(@"%@", responseObject);
+            STAssertTrue(0 < [responseObject count], @"should NOT be empty...");
+            
+            [self setFinishRunLoop:YES];
+        } failure:^(NSError *error) {
+            [self setFinishRunLoop:YES];
+            STFail(@"%@", error);
+        }];
         
-        [self setFinishRunLoop:YES];
     } failure:^(NSError *error) {
         [self setFinishRunLoop:YES];
         STFail(@"%@", error);
     }];
+    
+    while(![self finishRunLoop]) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+    }
+}
+
+-(void)testReadTasksWithTimeout {
+    NSURL* projectsURL = [NSURL URLWithString:@"http://localhost:8080/todo-server/"];
+    
+    // set up the pipeline for the tasks
+    AGPipeline* todo = [AGPipeline pipeline];
+    [todo pipe:^(id<AGPipeConfig> config) {
+        [config setName:@"tasks"];
+        [config setBaseURL:projectsURL];
+        [config setAuthModule:_authModule];
+        [config setType:@"REST"];
+        [config setRecordId:@"id"];
+        [config setTimeoutInterval:1]; // set to a "really" low interval
+    }];
+    
+    // get access to the tasks pipe
+    id<AGPipe> tasks = [todo pipeWithName:@"tasks"];
+
+    // login....
+    [_authModule login:@"john" password:@"123" success:^(id object) {
+        // read all tasks
+        [tasks read:^(id responseObject) {
+            STFail(@"%@", @"should NOT have been called");
+            
+            [self setFinishRunLoop:YES];
+        } failure:^(NSError *error) {
+            STAssertEquals(-1001, [error code], @"should be equal to code -1001 [request time out]");
+            [self setFinishRunLoop:YES];
+        }];
     
     } failure:^(NSError *error) {
         [self setFinishRunLoop:YES];
