@@ -15,20 +15,20 @@
 
 #import "AGAbstractBaseTestClass.h"
 
-#import "AGAuthenticationModule.h"
+#import "AGAuthenticationModuleAdapter.h"
 #import "AGHttpClient.h"
+
 
 /*
  * custom AGAuthenticationModule for Reddit
  */
-@interface AGRedditAuthenticationModule : NSObject <AGAuthenticationModule>
+@interface AGRedditAuthenticationModule : NSObject <AGAuthenticationModuleAdapter>
 @end
 
 @implementation AGRedditAuthenticationModule {
     // ivars
     AGHttpClient* _restClient;
-    
-    NSMutableDictionary *_authHeaderParams;
+    NSArray* _tokenHeaderNames;
 }
 
 @synthesize type = _type;
@@ -36,6 +36,8 @@
 @synthesize loginEndpoint = _loginEndpoint;
 @synthesize logoutEndpoint = _logoutEndpoint;
 @synthesize enrollEndpoint = _enrollEndpoint;
+
+@synthesize authTokens = _authTokens;
 
 -(id)init {
     self = [super init];
@@ -45,6 +47,7 @@
         _loginEndpoint = @"/api/login";
         _logoutEndpoint = @"/api/logout";
         
+        _tokenHeaderNames = [NSArray arrayWithObjects:@"Cookie", @"modhash", nil];
         _restClient = [AGHttpClient clientFor:[NSURL URLWithString:_baseURL]];
         _restClient.parameterEncoding = AFFormURLParameterEncoding;
     }
@@ -87,16 +90,9 @@
 
     [_restClient postPath:loginURL parameters:loginData success:^(AFHTTPRequestOperation *operation, id responseObject) {
 
-        _authHeaderParams = [[NSMutableDictionary alloc] init];
-        
-        NSDictionary* data = [[responseObject objectForKey:@"json"] objectForKey:@"data"];
-        
-        NSString* authToken = [data objectForKey:@"cookie"];
-        NSString* modhash = [data objectForKey:@"modhash"];
-        
-        [_authHeaderParams setObject:[@"reddit_session=" stringByAppendingString:authToken] forKey:@"Cookie"];
-        [_authHeaderParams setObject:modhash forKey:@"modhash"];
-        
+        // stash the auth token...:
+        [self readAndStashToken:responseObject];
+
         if (success) {
             success(responseObject);
         }
@@ -114,21 +110,30 @@
     // throw exception
 }
 
--(BOOL)isAuthenticated {
-    return (nil != _authHeaderParams);
-}
-
 -(void) cancel {
     // cancel all running http operations
     [_restClient.operationQueue cancelAllOperations];
 }
 
--(NSDictionary*)authHeaderParams {
-    return [_authHeaderParams copy];
+// private method
+-(void) readAndStashToken:(id) responseObject {
+    _authTokens = [[NSMutableDictionary alloc] init];
+    
+    NSDictionary* data = [[responseObject objectForKey:@"json"] objectForKey:@"data"];
+    
+    NSString* authToken = [data objectForKey:@"cookie"];
+    NSString* modhash = [data objectForKey:@"modhash"];
+    
+    [_authTokens setObject:[@"reddit_session=" stringByAppendingString:authToken] forKey:@"Cookie"];
+    [_authTokens setObject:modhash forKey:@"modhash"];
 }
 
--(NSDictionary*)authQueryParams {
-    return nil;
+- (BOOL)isAuthenticated {
+    return (nil != _authTokens);
+}
+
+- (void)deauthorize {
+    _authTokens = nil;
 }
 
 @end
@@ -138,6 +143,7 @@
 @end
 
 @implementation RedditPageParameterExtractor
+
 
 - (NSDictionary*) parse:(id)response
                 headers:(NSDictionary*)headers
