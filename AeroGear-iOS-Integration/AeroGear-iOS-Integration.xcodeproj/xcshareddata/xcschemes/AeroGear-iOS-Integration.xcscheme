@@ -44,6 +44,33 @@
                <Test
                   Identifier = "AGPagingWebLinking_Twitter">
                </Test>
+               <Test
+                  Identifier = "AGPagingHeaders_AGController">
+               </Test>
+               <Test
+                  Identifier = "AGPagingWebLinking_AGController">
+               </Test>
+               <Test
+                  Identifier = "AGPagingWebLinking_GitHub">
+               </Test>
+               <Test
+                  Identifier = "AGRestPipe_ProjectTests">
+               </Test>
+               <Test
+                  Identifier = "AGRestPipe_TagTests">
+               </Test>
+               <Test
+                  Identifier = "AGRestPipe_TaskTests">
+               </Test>
+               <Test
+                  Identifier = "AppNetPipeTests">
+               </Test>
+               <Test
+                  Identifier = "WorldOfWarcraft_PipeTests">
+               </Test>
+               <Test
+                  Identifier = "AGPagingBody_Twitter">
+               </Test>
             </SkippedTests>
          </TestableReference>
       </Testables>

@@ -25,6 +25,7 @@
 		6F52E00316B0096C00F0C74B /* AGPagingHeaders_AGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F52E00216B0096C00F0C74B /* AGPagingHeaders_AGController.m */; };
 		6F52E00616B01DD400F0C74B /* AGPagingBody_Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F52E00516B01DD400F0C74B /* AGPagingBody_Twitter.m */; };
 		6FC4CCD616B0737200A4CECC /* AGPagingWebLinking_AGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4CCD516B0737200A4CECC /* AGPagingWebLinking_AGController.m */; };
+		6FEA928F1716C36A0035065A /* AGPagingBody_Reddit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA928E1716C36A0035065A /* AGPagingBody_Reddit.m */; };
 		8E363BFA8E044B4F83015325 /* libPods-AeroGear-iOS-IntegrationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF3440F18ED4C48AD820B93 /* libPods-AeroGear-iOS-IntegrationTests.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		6F52E00216B0096C00F0C74B /* AGPagingHeaders_AGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingHeaders_AGController.m; sourceTree = "<group>"; };
 		6F52E00516B01DD400F0C74B /* AGPagingBody_Twitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingBody_Twitter.m; sourceTree = "<group>"; };
 		6FC4CCD516B0737200A4CECC /* AGPagingWebLinking_AGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingWebLinking_AGController.m; sourceTree = "<group>"; };
+		6FEA928E1716C36A0035065A /* AGPagingBody_Reddit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingBody_Reddit.m; sourceTree = "<group>"; };
 		8FF3440F18ED4C48AD820B93 /* libPods-AeroGear-iOS-IntegrationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AeroGear-iOS-IntegrationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E999A0F8B48346BCBDBFE8D8 /* Pods-AeroGear-iOS-IntegrationTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AeroGear-iOS-IntegrationTests.xcconfig"; path = "Pods/Pods-AeroGear-iOS-IntegrationTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		FD8942F3616B4E07A120DA18 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -165,6 +167,7 @@
 				57DCDB5F15F0FD7A00289EA4 /* AGRestPipe_TagTests.m */,
 				57F0C7B6165413610017287F /* AppNetPipeTests.m */,
 				6F52DFFE16AFF35D00F0C74B /* AGPagingWebLinking_GitHub.m */,
+				6FEA928E1716C36A0035065A /* AGPagingBody_Reddit.m */,
 				6F52E00516B01DD400F0C74B /* AGPagingBody_Twitter.m */,
 				6F52E00216B0096C00F0C74B /* AGPagingHeaders_AGController.m */,
 				6FC4CCD516B0737200A4CECC /* AGPagingWebLinking_AGController.m */,
@@ -338,6 +341,7 @@
 				6F52E00316B0096C00F0C74B /* AGPagingHeaders_AGController.m in Sources */,
 				6F52E00616B01DD400F0C74B /* AGPagingBody_Twitter.m in Sources */,
 				6FC4CCD616B0737200A4CECC /* AGPagingWebLinking_AGController.m in Sources */,
+				6FEA928F1716C36A0035065A /* AGPagingBody_Reddit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
