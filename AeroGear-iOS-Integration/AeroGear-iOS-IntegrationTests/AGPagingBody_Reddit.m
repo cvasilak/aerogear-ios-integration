@@ -28,7 +28,6 @@
 @implementation AGRedditAuthenticationModule {
     // ivars
     AGHttpClient* _restClient;
-    NSArray* _tokenHeaderNames;
 }
 
 @synthesize type = _type;
@@ -47,7 +46,6 @@
         _loginEndpoint = @"/api/login";
         _logoutEndpoint = @"/api/logout";
         
-        _tokenHeaderNames = [NSArray arrayWithObjects:@"Cookie", @"modhash", nil];
         _restClient = [AGHttpClient clientFor:[NSURL URLWithString:_baseURL]];
         _restClient.parameterEncoding = AFFormURLParameterEncoding;
     }
@@ -70,7 +68,10 @@
 -(void) enroll:(id) userData
        success:(void (^)(id object))success
        failure:(void (^)(NSError *error))failure {
-    
+
+    @throw [NSException exceptionWithName:@"InvalidMessage"
+                                   reason:@"enroll not applicable."
+                                 userInfo:nil];
 }
 
 -(void) login:(NSString*) username
@@ -78,7 +79,6 @@
       success:(void (^)(id object))success
       failure:(void (^)(NSError *error))failure {
 
-    //NSString* loginURL = [NSString stringWithFormat:@"%@/%@", _loginEndpoint, username];
     NSString* loginURL = [NSString stringWithFormat:@"%@", _loginEndpoint];
     
     [_restClient setDefaultHeader:@"User-Agent" value:[@"AeroGear iOS /u/" stringByAppendingString:username]];
@@ -107,7 +107,10 @@
 
 -(void) logout:(void (^)())success
        failure:(void (^)(NSError *error))failure {
-    // throw exception
+ 
+    @throw [NSException exceptionWithName:@"InvalidMessage"
+                                   reason:@"logout not applicable."
+                                 userInfo:nil];
 }
 
 -(void) cancel {
@@ -121,6 +124,7 @@
     
     NSDictionary* data = [[responseObject objectForKey:@"json"] objectForKey:@"data"];
     
+    // extract reddit authentication headers
     NSString* authToken = [data objectForKey:@"cookie"];
     NSString* modhash = [data objectForKey:@"modhash"];
     
@@ -219,7 +223,7 @@
         [self setFinishRunLoop:YES];
         
     } failure:^(NSError *error) {
-        //
+         STFail(@"%@", error);
     }];
     
     // keep the run loop going
