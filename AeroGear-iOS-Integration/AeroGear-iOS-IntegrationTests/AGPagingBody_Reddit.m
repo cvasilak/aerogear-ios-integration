@@ -20,13 +20,17 @@
 
 
 /*
- * custom AGAuthenticationModule for Reddit
+ * A custom Authentication Module that goes against Reddit service.
+ *
  */
 @interface AGRedditAuthenticationModule : NSObject <AGAuthenticationModuleAdapter>
 @end
 
 @implementation AGRedditAuthenticationModule {
-    // ivars
+    // as all other custom auth modules, (eg. AGRestAuthentication) we
+    // internally use the AGHttpClient to perform http communication. This
+    // allows us to have full access to the underlying http setup.
+    // (e.g. setting custom headers etc.)
     AGHttpClient* _restClient;
 }
 
@@ -286,7 +290,7 @@
             // Note: although success is called
             // and we ask a non existing page
             // (prev identifier was missing from the response)
-            // github responded with a list of results.
+            // reddit responded with a list of results.
             
             // Some apis such as github respond even on the
             // invalid page but others may throw an error
@@ -358,7 +362,7 @@
         [config setName:@".json"];
         [config setAuthModule:_rdtAuth];
         
-        [config setParameterProvider:@{@"count" : @"25"}];
+        [config setParameterProvider:@{@"limit" : @"10"}];
         [config setNextIdentifier:@"data.after"];
         [config setPreviousIdentifier:@"data.before"];
         [config setPageExtractor:[[RedditPageParameterExtractor alloc] init]];
@@ -369,24 +373,10 @@
         
         NSArray* results = [[[responseObject objectAtIndex:0] objectForKey:@"data"] objectForKey:@"children"];
         
-        STAssertTrue([results count] == 25, @"size should be 25");
+        STAssertTrue([results count] == 10, @"size should be 10");
         
         [self setFinishRunLoop:YES];
-        /* TODO test count why is not honoured??
-        // override the results per page from parameter provider
-        [rdt readWithParams:@{@"count" : @"20"} success:^(id responseObject) {
-            
-            NSArray* results = [[[responseObject objectAtIndex:0] objectForKey:@"data"] objectForKey:@"children"];
-            
-            STAssertTrue([results count] == 10, @"size should be 10");
-            
-            [self setFinishRunLoop:YES];
-            
-        } failure:^(NSError *error) {
-            [self setFinishRunLoop:YES];
-            STFail(@"%@", error);
-        }];
-        */
+
     } failure:^(NSError *error) {
         [self setFinishRunLoop:YES];
         STFail(@"%@", error);
