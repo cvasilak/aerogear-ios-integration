@@ -172,7 +172,7 @@
     
     if (element && ![element isKindOfClass:[NSNull class]]) {
         [mapOfLink setObject:[NSDictionary dictionaryWithObjectsAndKeys:element, @"after",
-                         [NSNumber numberWithInt:25], @"count", nil] forKey:@"AG-next-key"];
+                         [NSNumber numberWithInt:25], @"limit", nil] forKey:@"AG-next-key"];
     }
     
     // extract "previous page" identifier
@@ -184,7 +184,7 @@
     
     if (element && ![element isKindOfClass:[NSNull class]]) {
         [mapOfLink setObject:[NSDictionary dictionaryWithObjectsAndKeys:element, @"before",
-                          [NSNumber numberWithInt:25], @"count", nil] forKey:@"AG-prev-key"];
+                          [NSNumber numberWithInt:25], @"limit", nil] forKey:@"AG-prev-key"];
     }
 
     return mapOfLink;
@@ -393,7 +393,7 @@
         [config setName:@".json"];
         [config setAuthModule:_rdtAuth];
         
-        [config setParameterProvider:@{@"count" : @"25"}];
+        [config setParameterProvider:@{@"limit" : @"25"}];
         // bogus identifier
         [config setNextIdentifier:@"foo"];
         [config setPreviousIdentifier:@"data.before"];
@@ -437,7 +437,7 @@
         [config setName:@".json"];
         [config setAuthModule:_rdtAuth];
         
-        [config setParameterProvider:@{@"count" : @"25"}];
+        [config setParameterProvider:@{@"limit" : @"25"}];
         [config setNextIdentifier:@"data.after"];
         // bogus identifier
         [config setPreviousIdentifier:@"foo"];
