@@ -32,8 +32,11 @@
     
     _gists = [_ghPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"gists"];
-        [config setPreviousIdentifier:@"prev"]; // github uses different than the AG ctrl
-        [config setParameterProvider:@{@"page" : @"1", @"per_page" : @"5"}];
+        
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setPreviousIdentifier:@"prev"]; // github uses different than the AG ctrl
+            [pageConfig setParameterProvider:@{@"page" : @"1", @"per_page" : @"5"}];
+        }];
     }];
 }
 
@@ -154,8 +157,11 @@
 -(void)testParameterProvider {
     id <AGPipe> gists = [_ghPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"gists"];
-        [config setPreviousIdentifier:@"prev"];
-        [config setParameterProvider:@{@"page" : @"1", @"per_page" : @"5"}];
+        
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setPreviousIdentifier:@"prev"];
+            [pageConfig setParameterProvider:@{@"page" : @"1", @"per_page" : @"5"}];
+        }];
     }];
     
     [gists readWithParams:nil success:^(id responseObject) {
@@ -188,8 +194,10 @@
     id <AGPipe> gists = [_ghPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"gists"];
         
-        // invalid setting:
-        [config setNextIdentifier:@"foo"];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            // invalid setting:
+            [pageConfig setNextIdentifier:@"foo"];
+        }];
     }];
     
     __block NSMutableArray *pagedResultSet;
@@ -227,8 +235,10 @@
     id <AGPipe> gists = [_ghPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"gists"];
         
-        // invalid setting:
-        [config setPreviousIdentifier:@"foo"];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            // invalid setting:
+            [pageConfig setPreviousIdentifier:@"foo"];
+        }];
     }];
     
     __block NSMutableArray *pagedResultSet;
@@ -265,10 +275,14 @@
 -(void)testBogusMetadataLocation {
     id <AGPipe> gists = [_ghPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"gists"];
-        [config setPreviousIdentifier:@"prev"];
         
-        // invalid setting:
-        [config setMetadataLocation:@"body"];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setPreviousIdentifier:@"prev"];
+            
+            // invalid setting:
+            [pageConfig setMetadataLocation:@"body"];
+        }];
+    
     }];
     
     __block NSMutableArray *pagedResultSet;

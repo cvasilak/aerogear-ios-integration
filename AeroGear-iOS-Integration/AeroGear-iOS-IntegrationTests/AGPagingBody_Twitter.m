@@ -33,10 +33,13 @@
     _tweets = [_twPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"search.json"];
         
-        // this is the twitter specific setting:
-        [config setMetadataLocation:@"body"];
-        [config setNextIdentifier:@"next_page"];
-        [config setPreviousIdentifier:@"previous_page"];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            // this is the twitter specific setting:
+            [pageConfig setMetadataLocation:@"body"];
+            [pageConfig setNextIdentifier:@"next_page"];
+            [pageConfig setPreviousIdentifier:@"previous_page"];
+        }];
+        
     }];
 }
 
@@ -161,10 +164,12 @@
     id<AGPipe> tweets = [_twPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"search.json"];
         
-        [config setNextIdentifier:@"next_page"];
-        [config setPreviousIdentifier:@"previous_page"];
-        [config setParameterProvider:@{@"q" : @"aerogear", @"page" : @"1", @"rpp" : @"1"}];
-        [config setMetadataLocation:@"body"];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setNextIdentifier:@"next_page"];
+            [pageConfig setPreviousIdentifier:@"previous_page"];
+            [pageConfig setParameterProvider:@{@"q" : @"aerogear", @"page" : @"1", @"rpp" : @"1"}];
+            [pageConfig setMetadataLocation:@"body"];
+        }];
     }];
     
     // giving nil, should use the global (see above)
@@ -202,10 +207,13 @@
 -(void)testBogusNextIdentifier {
     id<AGPipe> tweets = [_twPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"search.json"];
-        [config setMetadataLocation:@"body"];
         
-        // invalid config, for twitter:
-        [config setNextIdentifier:@"foo"];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setMetadataLocation:@"body"];
+            
+            // invalid config, for twitter:
+            [pageConfig setNextIdentifier:@"foo"];
+        }];
     }];
     
     __block NSMutableArray *pagedResultSet;
@@ -241,10 +249,14 @@
 -(void)testBogusPreviousIdentifier {
     id<AGPipe> tweets = [_twPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"search.json"];
-        [config setMetadataLocation:@"body"];
-
-        // invalid config, for twitter:
-        [config setPreviousIdentifier:@"foo"];
+        
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setMetadataLocation:@"body"];
+            
+            // invalid config, for twitter:
+            [pageConfig setPreviousIdentifier:@"foo"];
+        }];
+ 
     }];
     
     __block NSMutableArray *pagedResultSet;
@@ -280,11 +292,14 @@
 -(void)testBogusMetadataLocation {
     id<AGPipe> tweets = [_twPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"search.json"];
-        [config setMetadataLocation:@"header"];
-
-        // invalid config, for twitter:
-        [config setNextIdentifier:@"next_page"];
-        [config setPreviousIdentifier:@"previous_page"];
+        
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setMetadataLocation:@"header"];
+            
+            // invalid config, for twitter:
+            [pageConfig setNextIdentifier:@"next_page"];
+            [pageConfig setPreviousIdentifier:@"previous_page"];
+        }];
     }];
     
     __block NSMutableArray *pagedResultSet;

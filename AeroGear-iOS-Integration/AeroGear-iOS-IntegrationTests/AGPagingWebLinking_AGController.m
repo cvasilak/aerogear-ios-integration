@@ -154,7 +154,11 @@
 -(void)testParameterProvider {
     id<AGPipe> cars = [_agPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"cars"];
-        [config setParameterProvider:@{@"color" : @"black", @"offset" : @"0", @"limit" : @1}];
+        
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setParameterProvider:@{@"color" : @"black", @"offset" : @"0", @"limit" : @1}];
+        }];
+
     }];
     
     [cars readWithParams:nil success:^(id responseObject) {
@@ -188,7 +192,9 @@
         [config setName:@"cars"];
         
         // wrong setting:
-        [config setNextIdentifier:@"foo"];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setNextIdentifier:@"foo"];
+        }];
     }];
     
      __block NSMutableArray *pagedResultSet;
@@ -226,7 +232,9 @@
         [config setName:@"cars"];
 
         // wrong setting:
-        [config setPreviousIdentifier:@"foo"];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setPreviousIdentifier:@"foo"];
+        }];
     }];
     
     __block NSMutableArray *pagedResultSet;
@@ -263,8 +271,10 @@
     id<AGPipe> cars = [_agPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"cars"];
 
-        // wrong setting:
-        [config setMetadataLocation:@"body"];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            // wrong setting:
+            [pageConfig setMetadataLocation:@"body"];
+        }];
     }];
     
     __block NSMutableArray *pagedResultSet;

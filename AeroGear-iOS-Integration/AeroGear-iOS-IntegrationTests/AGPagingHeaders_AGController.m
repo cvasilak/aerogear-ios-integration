@@ -32,9 +32,12 @@
     
     _cars = [_agPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"cars-custom"];
-        [config setNextIdentifier:@"AG-Links-Next"];
-        [config setPreviousIdentifier:@"AG-Links-Previous"];
-        [config setMetadataLocation:@"header"];
+        
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setNextIdentifier:@"AG-Links-Next"];
+            [pageConfig setPreviousIdentifier:@"AG-Links-Previous"];
+            [pageConfig setMetadataLocation:@"header"];
+        }];
     }];
 }
 
@@ -157,10 +160,12 @@
 -(void)testParameterProvider {
     id<AGPipe> cars = [_agPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"cars-custom"];
-        [config setNextIdentifier:@"AG-Links-Next"];
-        [config setPreviousIdentifier:@"AG-Links-Previous"];
-        [config setParameterProvider:@{@"color" : @"black", @"offset" : @"0", @"limit" : @1}];
-        [config setMetadataLocation:@"header"];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setNextIdentifier:@"AG-Links-Next"];
+            [pageConfig setPreviousIdentifier:@"AG-Links-Previous"];
+            [pageConfig setParameterProvider:@{@"color" : @"black", @"offset" : @"0", @"limit" : @1}];
+            [pageConfig setMetadataLocation:@"header"];
+        }];
     }];
     
     [cars readWithParams:nil success:^(id responseObject) {
@@ -192,10 +197,13 @@
 -(void)testBogusNextIdentifier {
     id<AGPipe> cars = [_agPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"cars"];
-        [config setMetadataLocation:@"header"];
         
-        // wrong setting:
-        [config setNextIdentifier:@"foo"];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setMetadataLocation:@"header"];
+            
+            // wrong setting:
+            [pageConfig setNextIdentifier:@"foo"];
+        }];
     }];
     
     __block NSMutableArray *pagedResultSet;
@@ -231,10 +239,13 @@
 -(void)testBogusPreviousIdentifier {
     id<AGPipe> cars = [_agPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"cars"];
-        [config setMetadataLocation:@"header"];
         
-        // wrong setting:
-        [config setPreviousIdentifier:@"foo"];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setMetadataLocation:@"header"];
+            
+            // wrong setting:
+            [pageConfig setPreviousIdentifier:@"foo"];
+        }];
     }];
     
     __block NSMutableArray *pagedResultSet;
@@ -271,8 +282,10 @@
     id<AGPipe> cars = [_agPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"cars"];
         
-        // wrong setting:
-        [config setMetadataLocation:@"body"];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            // wrong setting:
+            [pageConfig setMetadataLocation:@"body"];
+        }];
     }];
     
     __block NSMutableArray *pagedResultSet;

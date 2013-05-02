@@ -218,10 +218,13 @@
             [config setAuthModule:_rdtAuth];
             [config setName:@".json"];
             
-            [config setLimit:[NSNumber numberWithInt:25]];
-            [config setNextIdentifier:@"data.after"];
-            [config setPreviousIdentifier:@"data.before"];
-            [config setPageExtractor:[[RedditPageParameterExtractor alloc] init]];
+            [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+                [pageConfig setLimit:[NSNumber numberWithInt:25]];
+                [pageConfig setNextIdentifier:@"data.after"];
+                [pageConfig setPreviousIdentifier:@"data.before"];
+                [pageConfig setPageExtractor:[[RedditPageParameterExtractor alloc] init]];
+            }];
+            
         }];
         
         [self setFinishRunLoop:YES];
@@ -353,8 +356,6 @@
     while(![self finishRunLoop]) {
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
     }
-    
-    NSLog(@"end");
 }
 
 -(void)testParameterProvider {
@@ -362,10 +363,12 @@
         [config setName:@".json"];
         [config setAuthModule:_rdtAuth];
         
-        [config setParameterProvider:@{@"limit" : @"10"}];
-        [config setNextIdentifier:@"data.after"];
-        [config setPreviousIdentifier:@"data.before"];
-        [config setPageExtractor:[[RedditPageParameterExtractor alloc] init]];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setParameterProvider:@{@"limit" : @"10"}];
+            [pageConfig setNextIdentifier:@"data.after"];
+            [pageConfig setPreviousIdentifier:@"data.before"];
+            [pageConfig setPageExtractor:[[RedditPageParameterExtractor alloc] init]];
+        }];
     }];
     
     // giving nil, should use the global (see above)
@@ -393,11 +396,13 @@
         [config setName:@".json"];
         [config setAuthModule:_rdtAuth];
         
-        [config setParameterProvider:@{@"limit" : @"25"}];
-        // bogus identifier
-        [config setNextIdentifier:@"foo"];
-        [config setPreviousIdentifier:@"data.before"];
-        [config setPageExtractor:[[RedditPageParameterExtractor alloc] init]];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setParameterProvider:@{@"limit" : @"25"}];
+            // bogus identifier
+            [pageConfig setNextIdentifier:@"foo"];
+            [pageConfig setPreviousIdentifier:@"data.before"];
+            [pageConfig setPageExtractor:[[RedditPageParameterExtractor alloc] init]];
+        }];
     }];
     
     __block NSMutableArray *pagedResultSet;
@@ -437,11 +442,13 @@
         [config setName:@".json"];
         [config setAuthModule:_rdtAuth];
         
-        [config setParameterProvider:@{@"limit" : @"25"}];
-        [config setNextIdentifier:@"data.after"];
-        // bogus identifier
-        [config setPreviousIdentifier:@"foo"];
-        [config setPageExtractor:[[RedditPageParameterExtractor alloc] init]];
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setParameterProvider:@{@"limit" : @"25"}];
+            [pageConfig setNextIdentifier:@"data.after"];
+            // bogus identifier
+            [pageConfig setPreviousIdentifier:@"foo"];
+            [pageConfig setPageExtractor:[[RedditPageParameterExtractor alloc] init]];
+        }];
     }];
     
     __block NSMutableArray *pagedResultSet;
