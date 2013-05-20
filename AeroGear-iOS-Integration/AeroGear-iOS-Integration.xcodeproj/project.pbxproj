@@ -21,6 +21,8 @@
 		57F0C7921653ED3C0017287F /* WorldOfWarcraft_PipeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0C7911653ED3C0017287F /* WorldOfWarcraft_PipeTests.m */; };
 		57F0C7B7165413610017287F /* AppNetPipeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0C7B6165413610017287F /* AppNetPipeTests.m */; };
 		65D0975DE8C54FE58092C428 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12A26A08368F4CF8A40F5080 /* libPods.a */; };
+		6F3B4F39174AA47C003A38A7 /* AGHttpBasicAuthenticationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3B4F37174AA47C003A38A7 /* AGHttpBasicAuthenticationTests.m */; };
+		6F3B4F3A174AA47C003A38A7 /* AGHttpDigestAuthenticationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3B4F38174AA47C003A38A7 /* AGHttpDigestAuthenticationTests.m */; };
 		6F52DFFF16AFF35D00F0C74B /* AGPagingWebLinking_GitHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F52DFFE16AFF35D00F0C74B /* AGPagingWebLinking_GitHub.m */; };
 		6F52E00316B0096C00F0C74B /* AGPagingHeaders_AGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F52E00216B0096C00F0C74B /* AGPagingHeaders_AGController.m */; };
 		6F52E00616B01DD400F0C74B /* AGPagingBody_Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F52E00516B01DD400F0C74B /* AGPagingBody_Twitter.m */; };
@@ -71,6 +73,8 @@
 		57DCDB6215F0FF2400289EA4 /* AGAbstractBaseTestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGAbstractBaseTestClass.m; sourceTree = "<group>"; };
 		57F0C7911653ED3C0017287F /* WorldOfWarcraft_PipeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldOfWarcraft_PipeTests.m; sourceTree = "<group>"; };
 		57F0C7B6165413610017287F /* AppNetPipeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppNetPipeTests.m; sourceTree = "<group>"; };
+		6F3B4F37174AA47C003A38A7 /* AGHttpBasicAuthenticationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGHttpBasicAuthenticationTests.m; sourceTree = "<group>"; };
+		6F3B4F38174AA47C003A38A7 /* AGHttpDigestAuthenticationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGHttpDigestAuthenticationTests.m; sourceTree = "<group>"; };
 		6F52DFFE16AFF35D00F0C74B /* AGPagingWebLinking_GitHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingWebLinking_GitHub.m; sourceTree = "<group>"; };
 		6F52E00216B0096C00F0C74B /* AGPagingHeaders_AGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingHeaders_AGController.m; sourceTree = "<group>"; };
 		6F52E00516B01DD400F0C74B /* AGPagingBody_Twitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingBody_Twitter.m; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				57DCDB5815F0FD5700289EA4 /* AGRestPipe_TaskTests.m */,
 				57F0C7911653ED3C0017287F /* WorldOfWarcraft_PipeTests.m */,
 				57DCDB5C15F0FD6500289EA4 /* AGRestPipe_ProjectTests.m */,
+				6F3B4F37174AA47C003A38A7 /* AGHttpBasicAuthenticationTests.m */,
+				6F3B4F38174AA47C003A38A7 /* AGHttpDigestAuthenticationTests.m */,
 				57DCDB5F15F0FD7A00289EA4 /* AGRestPipe_TagTests.m */,
 				57F0C7B6165413610017287F /* AppNetPipeTests.m */,
 				6F52DFFE16AFF35D00F0C74B /* AGPagingWebLinking_GitHub.m */,
@@ -346,6 +352,8 @@
 				6FC4CCD616B0737200A4CECC /* AGPagingWebLinking_AGController.m in Sources */,
 				6FEA928F1716C36A0035065A /* AGPagingBody_Reddit.m in Sources */,
 				6FD55A92173D0855000297B6 /* AGRestAuthentication.m in Sources */,
+				6F3B4F39174AA47C003A38A7 /* AGHttpBasicAuthenticationTests.m in Sources */,
+				6F3B4F3A174AA47C003A38A7 /* AGHttpDigestAuthenticationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
