@@ -64,7 +64,7 @@ static NSString *const ENROLL_PASSWORD = @"123";
     [super tearDown];
 }
 
--(void)testHttpBasicAuthenticationCreation {
+-(void)testAGHttpDigestAuthenticationCreation {
     STAssertNotNil(_authModule, @"module should not be nil");
 }
 
@@ -80,6 +80,7 @@ static NSString *const ENROLL_PASSWORD = @"123";
             }];
 
         } failure:^(NSError *error) {
+            [self setFinishRunLoop:YES];
             STFail(@"should have read", error);
         }];
 
@@ -100,7 +101,7 @@ static NSString *const ENROLL_PASSWORD = @"123";
 
         [_pipe read:^(id responseObject) {
             [self setFinishRunLoop:YES];
-            STFail(@"should not have been called");
+            STFail(@"should NOT have been called");
 
         } failure:^(NSError *error) {
             [_authModule logout:^{
@@ -111,7 +112,7 @@ static NSString *const ENROLL_PASSWORD = @"123";
 
     } failure:^(NSError *error) {
         [self setFinishRunLoop:YES];
-        STFail(@"should not have been called");
+        STFail(@"should NOT have been called");
     }];
     
     // keep the run loop going

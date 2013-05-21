@@ -76,10 +76,12 @@ static NSString *const ENROLL_PASSWORD = @"123";
             [_authModule logout:^{
                 [self setFinishRunLoop:YES];
             } failure:^(NSError *error) {
-
+                [self setFinishRunLoop:YES];
+                STFail(@"should have logout", error);
             }];
 
         } failure:^(NSError *error) {
+            [self setFinishRunLoop:YES];
             STFail(@"should have read", error);
         }];
 
@@ -100,18 +102,20 @@ static NSString *const ENROLL_PASSWORD = @"123";
 
         [_pipe read:^(id responseObject) {
             [self setFinishRunLoop:YES];
-            STFail(@"should not have been called");
+            STFail(@"should NOT have been called");
 
         } failure:^(NSError *error) {
             [_authModule logout:^{
                 [self setFinishRunLoop:YES];
             } failure:^(NSError *error) {
+                [self setFinishRunLoop:YES];
+                STFail(@"should have logout", error);
             }];
         }];
 
     } failure:^(NSError *error) {
         [self setFinishRunLoop:YES];
-        STFail(@"should not have been called");
+        STFail(@"should NOT have been called");
     }];
     
     // keep the run loop going
