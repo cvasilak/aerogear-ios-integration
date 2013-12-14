@@ -12,19 +12,19 @@
 		570CAC2615F0AF8A00E54378 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570CAC1315F0AF8A00E54378 /* Foundation.framework */; };
 		570CAC2F15F0AF8A00E54378 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 570CAC2D15F0AF8A00E54378 /* InfoPlist.strings */; };
 		57DCDB6315F0FF2400289EA4 /* AGAbstractBaseTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCDB6215F0FF2400289EA4 /* AGAbstractBaseTestClass.m */; };
-		57F0C7921653ED3C0017287F /* WorldOfWarcraft_PipeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0C7911653ED3C0017287F /* WorldOfWarcraft_PipeTests.m */; };
-		57F0C7B7165413610017287F /* AppNetPipeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0C7B6165413610017287F /* AppNetPipeTests.m */; };
+		57F0C7921653ED3C0017287F /* WorldOfWarcraft_PipeTestsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0C7911653ED3C0017287F /* WorldOfWarcraft_PipeTestsSpec.m */; };
+		57F0C7B7165413610017287F /* AppNet_PipeTestsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0C7B6165413610017287F /* AppNet_PipeTestsSpec.m */; };
 		6F2DE9581771A7D5004BFA9C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2DE9521771A79B004BFA9C /* MobileCoreServices.framework */; };
 		6F2DE9591771A7D9004BFA9C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2DE9561771A7C2004BFA9C /* Security.framework */; };
 		6F2DE95A1771A7DE004BFA9C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2DE9501771A796004BFA9C /* SystemConfiguration.framework */; };
 		6F2DE95B1771A7EC004BFA9C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2DE9541771A7BB004BFA9C /* CoreGraphics.framework */; };
-		6F2DE95F1771A88C004BFA9C /* AGHttpAuthenticationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2DE95D1771A88C004BFA9C /* AGHttpAuthenticationTests.m */; };
-		6F52DFFF16AFF35D00F0C74B /* AGPagingWebLinking_GitHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F52DFFE16AFF35D00F0C74B /* AGPagingWebLinking_GitHub.m */; };
-		6F52E00316B0096C00F0C74B /* AGPagingHeaders_AGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F52E00216B0096C00F0C74B /* AGPagingHeaders_AGController.m */; };
+		6F2DE95F1771A88C004BFA9C /* AGHttpAuthenticationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2DE95D1771A88C004BFA9C /* AGHttpAuthenticationSpec.m */; };
+		6F52DFFF16AFF35D00F0C74B /* AGPagingWebLinking_GitHubSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F52DFFE16AFF35D00F0C74B /* AGPagingWebLinking_GitHubSpec.m */; };
+		6F52E00316B0096C00F0C74B /* AGPagingHeaders_AGControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F52E00216B0096C00F0C74B /* AGPagingHeaders_AGControllerSpec.m */; };
 		6F58792318509B8A00F01BFA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2DE9501771A796004BFA9C /* SystemConfiguration.framework */; };
 		6F58792418509B9000F01BFA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2DE9521771A79B004BFA9C /* MobileCoreServices.framework */; };
-		6FC4CCD616B0737200A4CECC /* AGPagingWebLinking_AGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4CCD516B0737200A4CECC /* AGPagingWebLinking_AGController.m */; };
-		6FEA928F1716C36A0035065A /* AGPagingBody_Reddit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA928E1716C36A0035065A /* AGPagingBody_Reddit.m */; };
+		6FC4CCD616B0737200A4CECC /* AGPagingWebLinking_AGControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4CCD516B0737200A4CECC /* AGPagingWebLinking_AGControllerSpec.m */; };
+		6FEA928F1716C36A0035065A /* AGPagingBody_RedditSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA928E1716C36A0035065A /* AGPagingBody_RedditSpec.m */; };
 		6FF023D0184F643A002FD75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570CAC1315F0AF8A00E54378 /* Foundation.framework */; };
 		6FF023D1184F643A002FD75C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2DE9541771A7BB004BFA9C /* CoreGraphics.framework */; };
 		6FF023D2184F643A002FD75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570CAC2415F0AF8A00E54378 /* UIKit.framework */; };
@@ -63,17 +63,17 @@
 		570CAC4315F0B03900E54378 /* Dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dummy.m; sourceTree = "<group>"; };
 		57DCDB6115F0FF2400289EA4 /* AGAbstractBaseTestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGAbstractBaseTestClass.h; sourceTree = "<group>"; };
 		57DCDB6215F0FF2400289EA4 /* AGAbstractBaseTestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGAbstractBaseTestClass.m; sourceTree = "<group>"; };
-		57F0C7911653ED3C0017287F /* WorldOfWarcraft_PipeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldOfWarcraft_PipeTests.m; sourceTree = "<group>"; };
-		57F0C7B6165413610017287F /* AppNetPipeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppNetPipeTests.m; sourceTree = "<group>"; };
+		57F0C7911653ED3C0017287F /* WorldOfWarcraft_PipeTestsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldOfWarcraft_PipeTestsSpec.m; sourceTree = "<group>"; };
+		57F0C7B6165413610017287F /* AppNet_PipeTestsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppNet_PipeTestsSpec.m; sourceTree = "<group>"; };
 		6F2DE9501771A796004BFA9C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6F2DE9521771A79B004BFA9C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		6F2DE9541771A7BB004BFA9C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6F2DE9561771A7C2004BFA9C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		6F2DE95D1771A88C004BFA9C /* AGHttpAuthenticationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGHttpAuthenticationTests.m; sourceTree = "<group>"; };
-		6F52DFFE16AFF35D00F0C74B /* AGPagingWebLinking_GitHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingWebLinking_GitHub.m; sourceTree = "<group>"; };
-		6F52E00216B0096C00F0C74B /* AGPagingHeaders_AGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingHeaders_AGController.m; sourceTree = "<group>"; };
-		6FC4CCD516B0737200A4CECC /* AGPagingWebLinking_AGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingWebLinking_AGController.m; sourceTree = "<group>"; };
-		6FEA928E1716C36A0035065A /* AGPagingBody_Reddit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingBody_Reddit.m; sourceTree = "<group>"; };
+		6F2DE95D1771A88C004BFA9C /* AGHttpAuthenticationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGHttpAuthenticationSpec.m; sourceTree = "<group>"; };
+		6F52DFFE16AFF35D00F0C74B /* AGPagingWebLinking_GitHubSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingWebLinking_GitHubSpec.m; sourceTree = "<group>"; };
+		6F52E00216B0096C00F0C74B /* AGPagingHeaders_AGControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingHeaders_AGControllerSpec.m; sourceTree = "<group>"; };
+		6FC4CCD516B0737200A4CECC /* AGPagingWebLinking_AGControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingWebLinking_AGControllerSpec.m; sourceTree = "<group>"; };
+		6FEA928E1716C36A0035065A /* AGPagingBody_RedditSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingBody_RedditSpec.m; sourceTree = "<group>"; };
 		6FF023CF184F643A002FD75C /* AeroGear-iOS-Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AeroGear-iOS-Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FF023D5184F643A002FD75C /* AeroGear-iOS-Integration-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AeroGear-iOS-Integration-Info.plist"; sourceTree = "<group>"; };
 		6FF023D7184F643A002FD75C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -87,6 +87,7 @@
 		6FF023FD184F6A8A002FD75C /* AGEncryptedPropertyListStorageSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGEncryptedPropertyListStorageSpec.m; sourceTree = "<group>"; };
 		6FF023FE184F6A8A002FD75C /* AGPassphraseKeyServicesSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPassphraseKeyServicesSpec.m; sourceTree = "<group>"; };
 		6FF023FF184F6A8A002FD75C /* AGPasswordKeyServicesSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPasswordKeyServicesSpec.m; sourceTree = "<group>"; };
+		84464A909CD84430A366F407 /* libPods-TestFoo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestFoo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF3440F18ED4C48AD820B93 /* libPods-AeroGear-iOS-IntegrationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AeroGear-iOS-IntegrationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E999A0F8B48346BCBDBFE8D8 /* Pods-AeroGear-iOS-IntegrationTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AeroGear-iOS-IntegrationTests.xcconfig"; path = "Pods/Pods-AeroGear-iOS-IntegrationTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		FD8942F3616B4E07A120DA18 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -159,6 +160,7 @@
 				12A26A08368F4CF8A40F5080 /* libPods.a */,
 				8FF3440F18ED4C48AD820B93 /* libPods-AeroGear-iOS-IntegrationTests.a */,
 				6FF023E6184F643A002FD75C /* XCTest.framework */,
+				84464A909CD84430A366F407 /* libPods-TestFoo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -186,13 +188,13 @@
 			children = (
 				57DCDB6415F0FF8A00289EA4 /* abstract */,
 				570CAC2B15F0AF8A00E54378 /* Supporting Files */,
-				6F2DE95D1771A88C004BFA9C /* AGHttpAuthenticationTests.m */,
-				57F0C7911653ED3C0017287F /* WorldOfWarcraft_PipeTests.m */,
-				57F0C7B6165413610017287F /* AppNetPipeTests.m */,
-				6F52DFFE16AFF35D00F0C74B /* AGPagingWebLinking_GitHub.m */,
-				6FEA928E1716C36A0035065A /* AGPagingBody_Reddit.m */,
-				6F52E00216B0096C00F0C74B /* AGPagingHeaders_AGController.m */,
-				6FC4CCD516B0737200A4CECC /* AGPagingWebLinking_AGController.m */,
+				6F2DE95D1771A88C004BFA9C /* AGHttpAuthenticationSpec.m */,
+				57F0C7911653ED3C0017287F /* WorldOfWarcraft_PipeTestsSpec.m */,
+				57F0C7B6165413610017287F /* AppNet_PipeTestsSpec.m */,
+				6F52DFFE16AFF35D00F0C74B /* AGPagingWebLinking_GitHubSpec.m */,
+				6FEA928E1716C36A0035065A /* AGPagingBody_RedditSpec.m */,
+				6F52E00216B0096C00F0C74B /* AGPagingHeaders_AGControllerSpec.m */,
+				6FC4CCD516B0737200A4CECC /* AGPagingWebLinking_AGControllerSpec.m */,
 				6FF023FC184F6A8A002FD75C /* AGEncryptedMemoryStorageSpec.m */,
 				6FF023FD184F6A8A002FD75C /* AGEncryptedPropertyListStorageSpec.m */,
 				6FF023FE184F6A8A002FD75C /* AGPassphraseKeyServicesSpec.m */,
@@ -399,15 +401,15 @@
 				6FF02400184F6A8A002FD75C /* AGEncryptedMemoryStorageSpec.m in Sources */,
 				6FF02402184F6A8A002FD75C /* AGPassphraseKeyServicesSpec.m in Sources */,
 				57DCDB6315F0FF2400289EA4 /* AGAbstractBaseTestClass.m in Sources */,
-				57F0C7921653ED3C0017287F /* WorldOfWarcraft_PipeTests.m in Sources */,
-				57F0C7B7165413610017287F /* AppNetPipeTests.m in Sources */,
-				6F52DFFF16AFF35D00F0C74B /* AGPagingWebLinking_GitHub.m in Sources */,
+				57F0C7921653ED3C0017287F /* WorldOfWarcraft_PipeTestsSpec.m in Sources */,
+				57F0C7B7165413610017287F /* AppNet_PipeTestsSpec.m in Sources */,
+				6F52DFFF16AFF35D00F0C74B /* AGPagingWebLinking_GitHubSpec.m in Sources */,
 				6FF02403184F6A8A002FD75C /* AGPasswordKeyServicesSpec.m in Sources */,
-				6F52E00316B0096C00F0C74B /* AGPagingHeaders_AGController.m in Sources */,
-				6FC4CCD616B0737200A4CECC /* AGPagingWebLinking_AGController.m in Sources */,
+				6F52E00316B0096C00F0C74B /* AGPagingHeaders_AGControllerSpec.m in Sources */,
+				6FC4CCD616B0737200A4CECC /* AGPagingWebLinking_AGControllerSpec.m in Sources */,
 				6FF02401184F6A8A002FD75C /* AGEncryptedPropertyListStorageSpec.m in Sources */,
-				6FEA928F1716C36A0035065A /* AGPagingBody_Reddit.m in Sources */,
-				6F2DE95F1771A88C004BFA9C /* AGHttpAuthenticationTests.m in Sources */,
+				6FEA928F1716C36A0035065A /* AGPagingBody_RedditSpec.m in Sources */,
+				6F2DE95F1771A88C004BFA9C /* AGHttpAuthenticationSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
