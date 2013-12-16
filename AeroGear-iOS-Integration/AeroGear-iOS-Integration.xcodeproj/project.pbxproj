@@ -23,6 +23,7 @@
 		6F52E00316B0096C00F0C74B /* AGPagingHeaders_AGControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F52E00216B0096C00F0C74B /* AGPagingHeaders_AGControllerSpec.m */; };
 		6F58792318509B8A00F01BFA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2DE9501771A796004BFA9C /* SystemConfiguration.framework */; };
 		6F58792418509B9000F01BFA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2DE9521771A79B004BFA9C /* MobileCoreServices.framework */; };
+		6FACEC2E185F11A70087BD47 /* AGRestAuthenticationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FACEC2D185F11A70087BD47 /* AGRestAuthenticationSpec.m */; };
 		6FC4CCD616B0737200A4CECC /* AGPagingWebLinking_AGControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4CCD516B0737200A4CECC /* AGPagingWebLinking_AGControllerSpec.m */; };
 		6FEA928F1716C36A0035065A /* AGPagingBody_RedditSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA928E1716C36A0035065A /* AGPagingBody_RedditSpec.m */; };
 		6FF023D0184F643A002FD75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570CAC1315F0AF8A00E54378 /* Foundation.framework */; };
@@ -72,6 +73,7 @@
 		6F2DE95D1771A88C004BFA9C /* AGHttpAuthenticationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGHttpAuthenticationSpec.m; sourceTree = "<group>"; };
 		6F52DFFE16AFF35D00F0C74B /* AGPagingWebLinking_GitHubSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingWebLinking_GitHubSpec.m; sourceTree = "<group>"; };
 		6F52E00216B0096C00F0C74B /* AGPagingHeaders_AGControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingHeaders_AGControllerSpec.m; sourceTree = "<group>"; };
+		6FACEC2D185F11A70087BD47 /* AGRestAuthenticationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGRestAuthenticationSpec.m; sourceTree = "<group>"; };
 		6FC4CCD516B0737200A4CECC /* AGPagingWebLinking_AGControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingWebLinking_AGControllerSpec.m; sourceTree = "<group>"; };
 		6FEA928E1716C36A0035065A /* AGPagingBody_RedditSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPagingBody_RedditSpec.m; sourceTree = "<group>"; };
 		6FF023CF184F643A002FD75C /* AeroGear-iOS-Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AeroGear-iOS-Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +190,7 @@
 			children = (
 				57DCDB6415F0FF8A00289EA4 /* abstract */,
 				570CAC2B15F0AF8A00E54378 /* Supporting Files */,
+				6FACEC2D185F11A70087BD47 /* AGRestAuthenticationSpec.m */,
 				6F2DE95D1771A88C004BFA9C /* AGHttpAuthenticationSpec.m */,
 				57F0C7911653ED3C0017287F /* WorldOfWarcraft_PipeTestsSpec.m */,
 				57F0C7B6165413610017287F /* AppNet_PipeTestsSpec.m */,
@@ -409,6 +412,7 @@
 				6FC4CCD616B0737200A4CECC /* AGPagingWebLinking_AGControllerSpec.m in Sources */,
 				6FF02401184F6A8A002FD75C /* AGEncryptedPropertyListStorageSpec.m in Sources */,
 				6FEA928F1716C36A0035065A /* AGPagingBody_RedditSpec.m in Sources */,
+				6FACEC2E185F11A70087BD47 /* AGRestAuthenticationSpec.m in Sources */,
 				6F2DE95F1771A88C004BFA9C /* AGHttpAuthenticationSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
