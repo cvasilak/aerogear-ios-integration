@@ -7,7 +7,7 @@ before_install:
     - cd AeroGear-iOS-Integration
 
 script:
-    - xctool -workspace AeroGear-iOS-Integration.xcworkspace -scheme AeroGear-iOS-IntegrationTests -sdk iphonesimulator -configuration Release test
+    - xctool -workspace AeroGear-iOS-Integration.xcworkspace -scheme AeroGear-iOS-IntegrationTests -sdk iphonesimulator -configuration Release test -freshSimulator -freshInstall
 
 notifications:
   irc: "irc.freenode.org#aerogear"
