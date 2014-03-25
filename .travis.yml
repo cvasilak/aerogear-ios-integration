@@ -6,7 +6,7 @@ before_install:
     - cd AeroGear-iOS-Integration
 
 script:
-    - xcodebuild -workspace AeroGear-iOS-Integration.xcworkspace -scheme AeroGear-iOS-IntegrationTests -sdk iphonesimulator -configuration Release clean test | xcpretty -c ; exit ${PIPESTATUS[0]}
+    - xcodebuild -workspace AeroGear-iOS-Integration.xcworkspace -scheme AeroGear-iOS-IntegrationTests -sdk iphonesimulator -configuration Release clean test | xcpretty -c; test ${PIPESTATUS[0]} -eq 0 
 
 #notifications:
 #  irc: "irc.freenode.org#aerogear"
