@@ -46,7 +46,7 @@ describe(@"AGPasswordKeyServices", ^{
             [encryptedData shouldNotBeNil];
             
             NSData* decryptedData = [service decrypt:encryptedData];
-            [decryptedData shouldBeNil];
+            [decryptedData shouldNotBeNil];
             
             // should match
             [[dataToEncrypt should] equal:decryptedData];
