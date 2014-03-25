@@ -13,9 +13,6 @@ script:
     # the params passed to xctool should be updated to reflect any recent development on the matter
     - xctool -workspace AeroGear-iOS-Integration.xcworkspace -scheme AeroGear-iOS-IntegrationTests -sdk iphonesimulator -configuration Release test -freshSimulator -freshInstall
 
-notifications:
-  irc: "irc.freenode.org#aerogear"
-
 branches:
   only:
     - master
