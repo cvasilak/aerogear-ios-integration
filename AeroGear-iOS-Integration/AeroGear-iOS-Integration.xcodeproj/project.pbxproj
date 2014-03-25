@@ -14,6 +14,7 @@
 		57DCDB6315F0FF2400289EA4 /* AGAbstractBaseTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCDB6215F0FF2400289EA4 /* AGAbstractBaseTestClass.m */; };
 		57F0C7921653ED3C0017287F /* WorldOfWarcraft_PipeTestsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0C7911653ED3C0017287F /* WorldOfWarcraft_PipeTestsSpec.m */; };
 		57F0C7B7165413610017287F /* AppNet_PipeTestsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0C7B6165413610017287F /* AppNet_PipeTestsSpec.m */; };
+		6F188A8718E1A588008D8650 /* AGEncryptedSQLiteStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F188A8618E1A588008D8650 /* AGEncryptedSQLiteStorageSpec.m */; };
 		6F2DE9581771A7D5004BFA9C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2DE9521771A79B004BFA9C /* MobileCoreServices.framework */; };
 		6F2DE9591771A7D9004BFA9C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2DE9561771A7C2004BFA9C /* Security.framework */; };
 		6F2DE95A1771A7DE004BFA9C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2DE9501771A796004BFA9C /* SystemConfiguration.framework */; };
@@ -35,8 +36,8 @@
 		6FF023E0184F643A002FD75C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FF023DF184F643A002FD75C /* Images.xcassets */; };
 		6FF02400184F6A8A002FD75C /* AGEncryptedMemoryStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF023FC184F6A8A002FD75C /* AGEncryptedMemoryStorageSpec.m */; };
 		6FF02401184F6A8A002FD75C /* AGEncryptedPropertyListStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF023FD184F6A8A002FD75C /* AGEncryptedPropertyListStorageSpec.m */; };
-		6FF02402184F6A8A002FD75C /* AGPassphraseKeyServicesSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF023FE184F6A8A002FD75C /* AGPassphraseKeyServicesSpec.m */; };
-		6FF02403184F6A8A002FD75C /* AGPasswordKeyServicesSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF023FF184F6A8A002FD75C /* AGPasswordKeyServicesSpec.m */; };
+		6FF02402184F6A8A002FD75C /* AGPassphraseEncryptionServicesSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF023FE184F6A8A002FD75C /* AGPassphraseEncryptionServicesSpec.m */; };
+		6FF02403184F6A8A002FD75C /* AGPasswordEncryptionServicesSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF023FF184F6A8A002FD75C /* AGPasswordEncryptionServicesSpec.m */; };
 		805BC43A1FE243098E1FA522 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12A26A08368F4CF8A40F5080 /* libPods.a */; };
 		8E363BFA8E044B4F83015325 /* libPods-AeroGear-iOS-IntegrationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF3440F18ED4C48AD820B93 /* libPods-AeroGear-iOS-IntegrationTests.a */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		57DCDB6215F0FF2400289EA4 /* AGAbstractBaseTestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGAbstractBaseTestClass.m; sourceTree = "<group>"; };
 		57F0C7911653ED3C0017287F /* WorldOfWarcraft_PipeTestsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldOfWarcraft_PipeTestsSpec.m; sourceTree = "<group>"; };
 		57F0C7B6165413610017287F /* AppNet_PipeTestsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppNet_PipeTestsSpec.m; sourceTree = "<group>"; };
+		6F188A8618E1A588008D8650 /* AGEncryptedSQLiteStorageSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGEncryptedSQLiteStorageSpec.m; sourceTree = "<group>"; };
 		6F2DE9501771A796004BFA9C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6F2DE9521771A79B004BFA9C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		6F2DE9541771A7BB004BFA9C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,8 +89,8 @@
 		6FF023E6184F643A002FD75C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6FF023FC184F6A8A002FD75C /* AGEncryptedMemoryStorageSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGEncryptedMemoryStorageSpec.m; sourceTree = "<group>"; };
 		6FF023FD184F6A8A002FD75C /* AGEncryptedPropertyListStorageSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGEncryptedPropertyListStorageSpec.m; sourceTree = "<group>"; };
-		6FF023FE184F6A8A002FD75C /* AGPassphraseKeyServicesSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPassphraseKeyServicesSpec.m; sourceTree = "<group>"; };
-		6FF023FF184F6A8A002FD75C /* AGPasswordKeyServicesSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPasswordKeyServicesSpec.m; sourceTree = "<group>"; };
+		6FF023FE184F6A8A002FD75C /* AGPassphraseEncryptionServicesSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPassphraseEncryptionServicesSpec.m; sourceTree = "<group>"; };
+		6FF023FF184F6A8A002FD75C /* AGPasswordEncryptionServicesSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPasswordEncryptionServicesSpec.m; sourceTree = "<group>"; };
 		84464A909CD84430A366F407 /* libPods-TestFoo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestFoo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF3440F18ED4C48AD820B93 /* libPods-AeroGear-iOS-IntegrationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AeroGear-iOS-IntegrationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E999A0F8B48346BCBDBFE8D8 /* Pods-AeroGear-iOS-IntegrationTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AeroGear-iOS-IntegrationTests.xcconfig"; path = "Pods/Pods-AeroGear-iOS-IntegrationTests.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -200,8 +202,9 @@
 				6FC4CCD516B0737200A4CECC /* AGPagingWebLinking_AGControllerSpec.m */,
 				6FF023FC184F6A8A002FD75C /* AGEncryptedMemoryStorageSpec.m */,
 				6FF023FD184F6A8A002FD75C /* AGEncryptedPropertyListStorageSpec.m */,
-				6FF023FE184F6A8A002FD75C /* AGPassphraseKeyServicesSpec.m */,
-				6FF023FF184F6A8A002FD75C /* AGPasswordKeyServicesSpec.m */,
+				6F188A8618E1A588008D8650 /* AGEncryptedSQLiteStorageSpec.m */,
+				6FF023FE184F6A8A002FD75C /* AGPassphraseEncryptionServicesSpec.m */,
+				6FF023FF184F6A8A002FD75C /* AGPasswordEncryptionServicesSpec.m */,
 			);
 			path = "AeroGear-iOS-IntegrationTests";
 			sourceTree = "<group>";
@@ -294,7 +297,7 @@
 		570CAC0715F0AF8A00E54378 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = JBoss;
 			};
 			buildConfigurationList = 570CAC0A15F0AF8A00E54378 /* Build configuration list for PBXProject "AeroGear-iOS-Integration" */;
@@ -402,12 +405,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FF02400184F6A8A002FD75C /* AGEncryptedMemoryStorageSpec.m in Sources */,
-				6FF02402184F6A8A002FD75C /* AGPassphraseKeyServicesSpec.m in Sources */,
+				6FF02402184F6A8A002FD75C /* AGPassphraseEncryptionServicesSpec.m in Sources */,
 				57DCDB6315F0FF2400289EA4 /* AGAbstractBaseTestClass.m in Sources */,
+				6F188A8718E1A588008D8650 /* AGEncryptedSQLiteStorageSpec.m in Sources */,
 				57F0C7921653ED3C0017287F /* WorldOfWarcraft_PipeTestsSpec.m in Sources */,
 				57F0C7B7165413610017287F /* AppNet_PipeTestsSpec.m in Sources */,
 				6F52DFFF16AFF35D00F0C74B /* AGPagingWebLinking_GitHubSpec.m in Sources */,
-				6FF02403184F6A8A002FD75C /* AGPasswordKeyServicesSpec.m in Sources */,
+				6FF02403184F6A8A002FD75C /* AGPasswordEncryptionServicesSpec.m in Sources */,
 				6F52E00316B0096C00F0C74B /* AGPagingHeaders_AGControllerSpec.m in Sources */,
 				6FC4CCD616B0737200A4CECC /* AGPagingWebLinking_AGControllerSpec.m in Sources */,
 				6FF02401184F6A8A002FD75C /* AGEncryptedPropertyListStorageSpec.m in Sources */,
@@ -460,9 +464,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -474,10 +482,14 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -486,17 +498,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -542,7 +561,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FD8942F3616B4E07A120DA18 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LIBRARY = "libc++";
@@ -581,7 +599,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FD8942F3616B4E07A120DA18 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LIBRARY = "libc++";

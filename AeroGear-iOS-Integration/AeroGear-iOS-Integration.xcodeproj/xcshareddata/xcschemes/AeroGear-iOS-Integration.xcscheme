@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0440"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -37,41 +37,6 @@
                BlueprintName = "AeroGear-iOS-IntegrationTests"
                ReferencedContainer = "container:AeroGear-iOS-Integration.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "AGPagingHeaders_AGController">
-               </Test>
-               <Test
-                  Identifier = "AGPagingWebLinking_AGController">
-               </Test>
-               <Test
-                  Identifier = "AGPagingWebLinking_GitHub">
-               </Test>
-               <Test
-                  Identifier = "AGPagingBody_Reddit">
-               </Test>
-               <Test
-                  Identifier = "AppNetPipeTests">
-               </Test>
-               <Test
-                  Identifier = "AGPasswordKeyServicesSpec">
-               </Test>
-               <Test
-                  Identifier = "AGPassphraseKeyServicesSpec">
-               </Test>
-               <Test
-                  Identifier = "AGEncryptedPropertyListStorageSpec">
-               </Test>
-               <Test
-                  Identifier = "AGEncryptedMemoryStorageSpec">
-               </Test>
-               <Test
-                  Identifier = "WorldOfWarcraft_PipeTestsSpec">
-               </Test>
-               <Test
-                  Identifier = "AGAbstractBaseTestClass">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>
