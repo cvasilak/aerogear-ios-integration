@@ -4,7 +4,6 @@ before_install:
     - gem install cocoapods
     - gem install xcpretty 
     - cd AeroGear-iOS-Integration
-    - pod install
 
 script:
     - xcodebuild -workspace AeroGear-iOS-Integration.xcworkspace -scheme AeroGear-iOS-IntegrationTests -sdk iphonesimulator -configuration Release clean test | xcpretty -c; exit ${PIPESTATUS[0]}
