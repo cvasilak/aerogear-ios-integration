@@ -1,17 +1,12 @@
 language: objective-c
 
 before_install:
-    - gem install cocoapods
-    - brew update
-    - brew uninstall xctool && brew install xctool
+    - gem install cocoapods -v 0.29.0 --no-rdoc --no-ri --no-document --quiet
+    - gem install xcpretty -v 0.1.4 --no-rdoc --no-ri --no-document --quiet
     - cd AeroGear-iOS-Integration
 
 script:
-    # there is an issue on travis that 'occassionaly' fails to bootstrap simulator
-    # to run the 'application' tests
-    # see https://github.com/travis-ci/travis-ci/issues/1630
-    # the params passed to xctool should be updated to reflect any recent development on the matter
-    - xctool -workspace AeroGear-iOS-Integration.xcworkspace -scheme AeroGear-iOS-IntegrationTests -sdk iphonesimulator -configuration Release test -freshSimulator -freshInstall
+    - set -o pipefail && xcodebuild -workspace AeroGear-iOS-Integration.xcworkspace -scheme AeroGear-iOS-IntegrationTests -sdk iphonesimulator -configuration Release clean test | xcpretty -c
 
 notifications:
   irc: "irc.freenode.org#aerogear"
