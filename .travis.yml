@@ -5,8 +5,10 @@ before_install:
     - gem install xcpretty 
     - cd AeroGear-iOS-Integration
 
-script:
     - xcodebuild -workspace AeroGear-iOS-Integration.xcworkspace -scheme AeroGear-iOS-IntegrationTests -sdk iphonesimulator -configuration Release clean test | xcpretty -c; exit ${PIPESTATUS[0]}
+
+#notifications:
+#  irc: "irc.freenode.org#aerogear"
 
 branches:
   only:
