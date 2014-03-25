@@ -55,7 +55,8 @@
         _logoutEndpoint = @"/api/logout";
         
         _restClient = [AGHttpClient clientFor:[NSURL URLWithString:_baseURL]];
-        _restClient.parameterEncoding = AFFormURLParameterEncoding;
+        // default to url serialization
+        _restClient.requestSerializer = [AFHTTPRequestSerializer serializer];
     }
     
     return self;
@@ -96,13 +97,13 @@
     
     NSString* loginURL = [NSString stringWithFormat:@"%@", _loginEndpoint];
     
-    [_restClient setDefaultHeader:@"User-Agent" value:[@"AeroGear iOS /u/" stringByAppendingString:loginData[@"user"]]];
+    [_restClient.requestSerializer setValue:[@"AeroGear iOS /u/" stringByAppendingString:loginData[@"user"]] forHTTPHeaderField:@"User-Agent"];
     
     NSDictionary* postData = @{@"api_type": @"json",
                                @"user": loginData[@"user"],
                                @"passwd": loginData[@"passwd"]};
     
-    [_restClient postPath:loginURL parameters:postData success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [_restClient POST:loginURL parameters:postData success:^(NSURLSessionDataTask *task, id responseObject) {
         
         // stash the auth token...:
         [self readAndStashToken:responseObject];
@@ -111,7 +112,7 @@
             success(responseObject);
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
         if (failure) {
             failure(error);
