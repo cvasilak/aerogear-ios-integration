@@ -252,7 +252,7 @@ describe(@"AGPagingBody_Reddit", ^{
                 fail(@"should have login");
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];            
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];            
         });
         
         afterEach(^{
@@ -289,7 +289,7 @@ describe(@"AGPagingBody_Reddit", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should successfully move back from the first page", ^{
@@ -321,7 +321,7 @@ describe(@"AGPagingBody_Reddit", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should successfully move next and back", ^{
@@ -362,7 +362,7 @@ describe(@"AGPagingBody_Reddit", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should respect parameter provider settings", ^{
@@ -392,7 +392,7 @@ describe(@"AGPagingBody_Reddit", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should fail with bogus next identifier", ^{
@@ -434,7 +434,7 @@ describe(@"AGPagingBody_Reddit", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
 
         it(@"should fail with bogus previous identifier", ^{
@@ -476,7 +476,7 @@ describe(@"AGPagingBody_Reddit", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
     });
 });

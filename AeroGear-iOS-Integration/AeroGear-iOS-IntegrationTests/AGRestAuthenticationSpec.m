@@ -78,7 +78,7 @@ describe(@"AGRestAuthentication", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should fail to login", ^{
@@ -99,7 +99,7 @@ describe(@"AGRestAuthentication", ^{
                 finishedFlag = YES;
             }];
 
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         /*
@@ -141,7 +141,7 @@ describe(@"AGRestAuthentication", ^{
                 finishedFlag = YES;                
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should fail to enroll", ^{
@@ -167,7 +167,7 @@ describe(@"AGRestAuthentication", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];            
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];            
         });
          
          */

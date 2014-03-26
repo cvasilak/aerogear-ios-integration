@@ -58,7 +58,7 @@ describe(@"WorldOfWarcraft_PipeTests", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should successfully retrieve WoW race", ^{
@@ -78,7 +78,7 @@ describe(@"WorldOfWarcraft_PipeTests", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should successfully retrieve WoW recipe", ^{
@@ -98,7 +98,7 @@ describe(@"WorldOfWarcraft_PipeTests", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
     });
 });

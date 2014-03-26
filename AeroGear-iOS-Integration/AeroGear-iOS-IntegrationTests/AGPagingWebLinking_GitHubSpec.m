@@ -78,7 +78,7 @@ describe(@"AGPagingWebLinking_GitHub", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should successfully move back from the first page", ^{
@@ -110,7 +110,7 @@ describe(@"AGPagingWebLinking_GitHub", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should successfully move next and back", ^{
@@ -150,7 +150,7 @@ describe(@"AGPagingWebLinking_GitHub", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should respect parameter provider settings", ^{
@@ -183,7 +183,7 @@ describe(@"AGPagingWebLinking_GitHub", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should fail with bogus next identifier", ^{
@@ -221,7 +221,7 @@ describe(@"AGPagingWebLinking_GitHub", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should fail with bogus previous identifier", ^{
@@ -259,7 +259,7 @@ describe(@"AGPagingWebLinking_GitHub", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should fail with bogus metadata location", ^{
@@ -300,7 +300,7 @@ describe(@"AGPagingWebLinking_GitHub", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
     });
 });
