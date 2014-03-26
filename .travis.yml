@@ -1,15 +1,12 @@
 language: objective-c
 
 before_install:
-    - gem install cocoapods
-    - gem install xcpretty 
+    - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+    - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
     - cd AeroGear-iOS-Integration
 
 script:
     - set -o pipefail && xcodebuild -workspace AeroGear-iOS-Integration.xcworkspace -scheme AeroGear-iOS-IntegrationTests -sdk iphonesimulator -configuration Release clean test | xcpretty -c
-
-notifications:
-  irc: "irc.freenode.org#aerogear"
 
 branches:
   only:

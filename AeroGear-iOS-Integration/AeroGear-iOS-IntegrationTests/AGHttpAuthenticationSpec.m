@@ -66,7 +66,7 @@ describe(@"AGHttpAuthentication", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
         
         it(@"should fail to login with wrong credentials", ^{
@@ -85,7 +85,7 @@ describe(@"AGHttpAuthentication", ^{
                 finishedFlag = YES;
             }];
             
-            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(4.0)] beYes];
+            [[expectFutureValue(theValue(finishedFlag)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
         });
     });
 });
